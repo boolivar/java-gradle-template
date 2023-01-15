@@ -1,0 +1,7 @@
+plugins {
+    id "java-conventions"
+}
+
+dependencies {
+    runtimeOnly "org.springframework.boot:spring-boot-starter-logging"
+}

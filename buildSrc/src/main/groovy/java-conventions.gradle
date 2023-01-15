@@ -1,0 +1,56 @@
+plugins {
+    id "java"
+    id "jacoco"
+    id "checkstyle"
+    id "com.github.spotbugs"
+}
+
+group = "org.bool"
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(8)
+    }
+    withJavadocJar()
+    withSourcesJar()
+}
+
+test {
+    useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = jacocoMinRatio as BigDecimal
+            }
+        }
+    }
+}
+
+check.dependsOn jacocoTestCoverageVerification
+
+checkstyle {
+    configDirectory = file("${rootDir}/gradle/config/checkstyle")
+    toolVersion = "9.3"
+}
+
+spotbugs {
+    omitVisitors = ["FindReturnRef"]
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation platform("org.springframework.boot:spring-boot-dependencies:${springBootVersion}")
+
+    implementation "org.slf4j:slf4j-api"
+    testImplementation("org.springframework.boot:spring-boot-starter-test") {
+        exclude group: "org.springframework"
+        exclude group: "org.springframework.boot"
+    }
+}
