@@ -46,7 +46,7 @@ repositories {
 }
 
 dependencies {
-    implementation platform("org.springframework.boot:spring-boot-dependencies:${springBootVersion}")
+    implementation platform("org.springframework.boot:spring-boot-dependencies:2.7.7")
 
     implementation "org.slf4j:slf4j-api"
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
