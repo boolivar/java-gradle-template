@@ -39,6 +39,15 @@ checkstyle {
     toolVersion = "9.3"
 }
 
+pmd {
+    consoleOutput = true
+    ruleSets = ["ruleset.xml"]
+}
+
+tasks.withType(Pmd).configureEach {
+    pmdClasspath += files("config/pmd")
+}
+
 spotbugs {
     omitVisitors = ["FindReturnRef"]
 }

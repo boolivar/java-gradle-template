@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<ruleset name="PMD rules"
+    xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+
+    <description>Rules</description>
+
+    <rule name="StaticStarImports" language="java" message="Max static * imports violated" class="net.sourceforge.pmd.lang.rule.XPathRule">
+        <description>Static * imports</description>
+        <priority>3</priority>
+        <properties>
+            <property name="max" type="Integer" value="1" min="0" max="1000" description="Max static * imports"/>
+            <property name="version" value="2.0"/>
+            <property name="xpath">
+                <value>
+                    <![CDATA[ImportDeclaration[@Static = true() and @ImportOnDemand = true()][$max + 1]]]>
+                </value>
+            </property>
+        </properties>
+    </rule>
+    <rule name="StarImports" language="java" message="Max * imports violated" class="net.sourceforge.pmd.lang.rule.XPathRule">
+        <description>* imports</description>
+        <priority>3</priority>
+        <properties>
+            <property name="max" type="Integer" value="1" min="0" max="1000" description="Max * imports"/>
+            <property name="version" value="2.0"/>
+            <property name="xpath">
+                <value>
+                    <![CDATA[ImportDeclaration[@Static = false() and @ImportOnDemand = true()][$max + 1]]]>
+                </value>
+            </property>
+        </properties>
+    </rule>
+</ruleset>
