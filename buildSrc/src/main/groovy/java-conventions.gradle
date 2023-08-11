@@ -1,6 +1,7 @@
 plugins {
     id "java"
     id "jacoco"
+    id "pmd"
     id "checkstyle"
     id "com.github.spotbugs"
 }
@@ -21,6 +22,7 @@ test {
 }
 
 jacocoTestCoverageVerification {
+    dependsOn test
     violationRules {
         rule {
             limit {
