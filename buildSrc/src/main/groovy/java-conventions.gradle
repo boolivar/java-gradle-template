@@ -37,7 +37,7 @@ check.dependsOn jacocoTestCoverageVerification
 jar.dependsOn check
 
 checkstyle {
-    configDirectory = file("${rootDir}/gradle/config/checkstyle")
+    configDirectory = file("$rootDir/gradle/config/checkstyle")
     toolVersion = "9.3"
 }
 
@@ -47,7 +47,7 @@ pmd {
 }
 
 tasks.withType(Pmd).configureEach {
-    pmdClasspath += files("config/pmd")
+    pmdClasspath += files("$rootDir/gradle/config/pmd")
 }
 
 spotbugs {
