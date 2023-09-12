@@ -34,6 +34,8 @@ jacocoTestCoverageVerification {
 
 check.dependsOn jacocoTestCoverageVerification
 
+jar.dependsOn check
+
 checkstyle {
     configDirectory = file("${rootDir}/gradle/config/checkstyle")
     toolVersion = "9.3"
