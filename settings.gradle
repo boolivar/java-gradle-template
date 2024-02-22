@@ -1,1 +1,15 @@
-rootProject.name = "java-gradle-template"
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+    }
+}
+
+rootDir.eachFileRecurse groovy.io.FileType.FILES, {
+    if (it.name in ["build.gradle", "build.gradle.kts"]) {
+        rootDir.relativePath(it.parentFile).tokenize("/").with { path ->
+            if (path[0] != "buildSrc" && path.every { !it.startsWith(".") }) {
+                include path.join(":")
+            }
+        }
+    }
+}
