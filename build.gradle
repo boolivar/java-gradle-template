@@ -1,5 +1,21 @@
 plugins {
     id "java-conventions"
+    id "pl.allegro.tech.build.axion-release" version "1.17.0"
+}
+
+scmVersion {
+    tag.prefix = ""
+    useHighestVersion = true
+    versionIncrementer("incrementMinorIfNotOnRelease", [releaseBranchPattern: "(?>release|(?>hot)?fix)/.+"])
+    branchVersionCreator = [
+        "master": "simple",
+        "release/.*": "simple",
+        ".*": "versionWithBranch"
+    ]
+}
+
+allprojects {
+    project.version = scmVersion.version
 }
 
 dependencies {
