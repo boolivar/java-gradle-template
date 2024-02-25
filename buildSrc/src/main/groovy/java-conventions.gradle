@@ -4,6 +4,7 @@ plugins {
     id "pmd"
     id "checkstyle"
     id "com.github.spotbugs"
+    id "io.freefair.lombok"
 }
 
 group = "org.bool"
