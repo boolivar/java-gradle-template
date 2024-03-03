@@ -60,9 +60,8 @@ repositories {
 }
 
 dependencies {
-    implementation platform("org.springframework.boot:spring-boot-dependencies:2.7.7")
+    implementation platform(project(":platform"))
 
-    implementation "org.slf4j:slf4j-api"
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude group: "org.springframework"
         exclude group: "org.springframework.boot"

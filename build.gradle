@@ -1,5 +1,4 @@
 plugins {
-    id "java-conventions"
     id "pl.allegro.tech.build.axion-release" version "1.17.0"
 }
 
@@ -15,9 +14,5 @@ scmVersion {
 }
 
 allprojects {
-    project.version = scmVersion.version
-}
-
-dependencies {
-    runtimeOnly "org.springframework.boot:spring-boot-starter-logging"
+    version = scmVersion.version
 }
