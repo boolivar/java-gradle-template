@@ -11,6 +11,7 @@
         <exclude name="JUnitAssertionsShouldIncludeMessage"/>
         <exclude name="JUnitTestContainsTooManyAsserts"/>
     </rule>
+
     <rule ref="category/java/codestyle.xml">
         <exclude name="AtLeastOneConstructor"/>
         <exclude name="CallSuperInConstructor"/>
@@ -24,6 +25,12 @@
         <exclude name="ShortClassName"/>
         <exclude name="ShortVariable"/>
     </rule>
+    <rule ref="category/java/codestyle.xml/UseUnderscoresInNumericLiterals">
+        <properties>
+            <property name="acceptableDecimalLength" value="5"/>
+        </properties>
+    </rule>
+
     <rule ref="category/java/design.xml">
         <exclude name="AvoidCatchingGenericException"/>
         <exclude name="AvoidThrowingRawExceptionTypes"/>
@@ -32,20 +39,19 @@
         <exclude name="LoosePackageCoupling"/>
         <exclude name="UseUtilityClass"/>
     </rule>
-    <rule ref="category/java/errorprone.xml">
-    </rule>
-    <rule ref="category/java/performance.xml">
-    </rule>
-
-    <rule ref="category/java/codestyle.xml/UseUnderscoresInNumericLiterals">
-        <properties>
-            <property name="acceptableDecimalLength" value="6"/>
-        </properties>
-    </rule>
     <rule ref="category/java/design.xml/NcssCount">
         <properties>
             <property name="methodReportLevel" value="25"/>
             <property name="classReportLevel" value="200"/>
+        </properties>
+    </rule>
+
+    <rule ref="category/java/errorprone.xml">
+    </rule>
+    <rule ref="category/java/errorprone.xml/AvoidLiteralsInIfCondition">
+        <properties>
+            <property name="ignoreMagicNumbers" value="-1,0,1"/>
+            <property name="ignoreExpressions" value="true"/>
         </properties>
     </rule>
     <rule ref="category/java/errorprone.xml/TestClassWithoutTestCases">
@@ -53,5 +59,9 @@
             <property name="testClassPattern" value="^.+Test(?:Set|Case)?$"/>
         </properties>
     </rule>
+
+    <rule ref="category/java/performance.xml">
+    </rule>
+
     <rule ref="rules.xml/StaticStarImports"/>
 </ruleset>
