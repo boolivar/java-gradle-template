@@ -47,6 +47,7 @@
     </rule>
 
     <rule ref="category/java/errorprone.xml">
+        <exclude name="UseProperClassLoader"/>
     </rule>
     <rule ref="category/java/errorprone.xml/AvoidLiteralsInIfCondition">
         <properties>
@@ -64,4 +65,5 @@
     </rule>
 
     <rule ref="rules.xml/StaticStarImports"/>
+    <rule ref="rules.xml/UseContextClassLoader"/>
 </ruleset>
