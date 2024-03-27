@@ -1,0 +1,31 @@
+name: CI
+on: push
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4.1.1
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4.1.0
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+    - name: Setup Gradle
+      uses: gradle/gradle-build-action@v3.1.0
+    - name: Run Gradle checks
+      run: ./gradlew check
+    - name: Upload test reports
+      if: ${{ !cancelled() }}
+      uses: actions/upload-artifact@v4.3.1
+      with:
+        name: reports
+        path: '**/build/reports/**/*'
+    - name: Release
+      if: ${{ github.ref_name == 'master' || startsWith(github.ref_name, 'release/') }}
+      uses: google-github-actions/release-please-action@v4.1.0
+      with:
+          target-branch: ${{ github.ref_name }}
+          release-type: simple
