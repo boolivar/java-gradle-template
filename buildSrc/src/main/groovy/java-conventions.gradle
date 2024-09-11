@@ -17,13 +17,13 @@ java {
     withSourcesJar()
 }
 
-test {
+tasks.named("test") {
     useJUnitPlatform()
-    finalizedBy jacocoTestReport
+    finalizedBy "jacocoTestReport"
 }
 
-jacocoTestCoverageVerification {
-    dependsOn test
+tasks.named("jacocoTestCoverageVerification") {
+    dependsOn "test"
     violationRules {
         rule {
             limit {
@@ -33,9 +33,13 @@ jacocoTestCoverageVerification {
     }
 }
 
-check.dependsOn jacocoTestCoverageVerification
+tasks.named("check") {
+    dependsOn "jacocoTestCoverageVerification"
+}
 
-jar.dependsOn check
+tasks.named("jar") {
+    dependsOn "check"
+}
 
 checkstyle {
     configDirectory = file("$rootDir/gradle/config/checkstyle")
