@@ -45,6 +45,7 @@ checkstyle {
 pmd {
     consoleOutput = true
     ruleSets = ["ruleset.xml"]
+    toolVersion = net.sourceforge.pmd.PMDVersion.VERSION
 }
 
 tasks.withType(Pmd).configureEach {
