@@ -39,7 +39,7 @@ jar.dependsOn check
 
 checkstyle {
     configDirectory = file("$rootDir/gradle/config/checkstyle")
-    toolVersion = "9.3"
+    toolVersion = com.puppycrawl.tools.checkstyle.Checker.package.implementationVersion
 }
 
 pmd {
