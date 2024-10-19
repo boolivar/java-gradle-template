@@ -11,6 +11,11 @@
         <exclude name="JUnitAssertionsShouldIncludeMessage"/>
         <exclude name="JUnitTestContainsTooManyAsserts"/>
     </rule>
+    <rule ref="category/java/bestpractices.xml/JUnitTestsShouldIncludeAssert">
+        <properties>
+            <property name="extraAssertMethodNames" value="verify,then"/>
+        </properties>
+    </rule>
 
     <rule ref="category/java/codestyle.xml">
         <exclude name="AtLeastOneConstructor"/>
