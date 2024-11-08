@@ -17,6 +17,10 @@ java {
     withSourcesJar()
 }
 
+tasks.withType(Javadoc).configureEach {
+    options.addBooleanOption("Xdoclint:none", true)
+}
+
 tasks.named("test") {
     useJUnitPlatform()
     finalizedBy "jacocoTestReport"
