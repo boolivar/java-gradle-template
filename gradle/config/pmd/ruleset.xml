@@ -8,10 +8,10 @@
 
     <rule ref="category/java/bestpractices.xml">
         <exclude name="GuardLogStatement"/>
-        <exclude name="JUnitAssertionsShouldIncludeMessage"/>
-        <exclude name="JUnitTestContainsTooManyAsserts"/>
+        <exclude name="UnitTestAssertionsShouldIncludeMessage"/>
+        <exclude name="UnitTestContainsTooManyAsserts"/>
     </rule>
-    <rule ref="category/java/bestpractices.xml/JUnitTestsShouldIncludeAssert">
+    <rule ref="category/java/bestpractices.xml/UnitTestShouldIncludeAssert">
         <properties>
             <property name="extraAssertMethodNames" value="verify,then"/>
         </properties>
