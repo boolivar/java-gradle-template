@@ -7,6 +7,7 @@
     <description>Rule set</description>
 
     <rule ref="category/java/bestpractices.xml">
+        <exclude name="ImplicitFunctionalInterface"/>
         <exclude name="GuardLogStatement"/>
         <exclude name="UnitTestAssertionsShouldIncludeMessage"/>
         <exclude name="UnitTestContainsTooManyAsserts"/>
