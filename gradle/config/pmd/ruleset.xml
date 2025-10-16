@@ -71,6 +71,6 @@
     <rule ref="category/java/performance.xml">
     </rule>
 
-    <rule ref="rules.xml/StaticStarImports"/>
-    <rule ref="rules.xml/UseContextClassLoader"/>
+    <rule ref="custom-rules.xml/StaticStarImports"/>
+    <rule ref="custom-rules.xml/UseContextClassLoader"/>
 </ruleset>
