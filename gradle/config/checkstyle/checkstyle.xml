@@ -137,7 +137,9 @@
         <!--<module name="RegexpHeader"/>-->
 
         <!-- Imports (http://checkstyle.sourceforge.net/config_imports.html) -->
-        <!--<module name="AvoidStarImport"/>-->
+        <module name="AvoidStarImport">
+            <property name="allowStaticMemberImports" value="true"/>
+        </module>
         <!--<module name="AvoidStaticImport"/>-->
         <!--<module name="CustomImportOrder"/>-->
         <module name="IllegalImport"/>
