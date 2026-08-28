@@ -1,0 +1,14 @@
+plugins {
+    `kotlin-dsl`
+}
+
+repositories {
+    gradlePluginPortal()
+}
+
+dependencies {
+    implementation("com.github.spotbugs.snom:spotbugs-gradle-plugin:6.0.22")
+    implementation("com.puppycrawl.tools:checkstyle:14.0.0")
+    implementation("io.freefair.gradle:lombok-plugin:9.5.0")
+    implementation("net.sourceforge.pmd:pmd-java:7.26.0")
+}
