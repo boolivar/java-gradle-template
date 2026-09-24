@@ -44,7 +44,7 @@
         <exclude name="DataClass"/>
         <exclude name="LawOfDemeter"/>
         <exclude name="LoosePackageCoupling"/>
-        <exclude name="UseUtilityClass"/>
+        <exclude name="InstantiableUtilityClass"/>
     </rule>
     <rule ref="category/java/design.xml/NcssCount">
         <properties>
