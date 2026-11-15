@@ -1,5 +1,5 @@
 [versions]
-checkstyle = "14.1.0"
+checkstyle = "14.4.0"
 commons-collections = "4.4"
 commons-io = "2.15.1"
 lombok-plugin = "9.7.0"
