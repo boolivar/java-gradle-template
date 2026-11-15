@@ -7,9 +7,9 @@ javaPlatform {
 }
 
 dependencies {
-    api(platform("org.springframework.boot:spring-boot-dependencies:3.2.3"))
+    api(platform(libs.spring.boot.dependencies))
     constraints {
-        api("commons-io:commons-io:2.15.1")
-        api("org.apache.commons:commons-collections4:4.4")
+        api(libs.commons.io)
+        api(libs.commons.collections)
     }
 }

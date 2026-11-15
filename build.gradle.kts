@@ -1,5 +1,5 @@
 plugins {
-    id("pl.allegro.tech.build.axion-release") version "1.21.4"
+    alias(libs.plugins.versioning)
 }
 
 scmVersion {

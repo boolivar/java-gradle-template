@@ -7,8 +7,11 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.spotbugs.snom:spotbugs-gradle-plugin:6.0.22")
-    implementation("com.puppycrawl.tools:checkstyle:14.1.0")
-    implementation("io.freefair.gradle:lombok-plugin:9.7.0")
-    implementation("net.sourceforge.pmd:pmd-java:7.27.0")
+    implementation(plugin(libs.plugins.lombok))
+    implementation(plugin(libs.plugins.spotbugs))
+    implementation(libs.checkstyle)
+    implementation(libs.pmd)
 }
+
+fun DependencyHandlerScope.plugin(plugin: Provider<PluginDependency>) =
+    plugin.map { "${it.pluginId}:${it.pluginId}.gradle.plugin:${it.version}" }
