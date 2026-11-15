@@ -1,0 +1,21 @@
+[versions]
+checkstyle = "14.1.0"
+commons-collections = "4.4"
+commons-io = "2.15.1"
+lombok-plugin = "9.7.0"
+pmd = "7.27.0"
+spotbugs-plugin = "6.0.22"
+spring-boot = "3.2.3"
+versioning-plugin = "1.21.4"
+
+[libraries]
+checkstyle = { module = "com.puppycrawl.tools:checkstyle", version.ref = "checkstyle" }
+commons-collections = { module = "org.apache.commons:commons-collections4", version.ref = "commons-collections" }
+commons-io = { module = "commons-io:commons-io", version.ref = "commons-io" }
+pmd = { module = "net.sourceforge.pmd:pmd-java", version.ref = "pmd" }
+spring-boot-dependencies = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "spring-boot" }
+
+[plugins]
+lombok = { id = "io.freefair.lombok", version.ref = "lombok-plugin" }
+spotbugs = { id = "com.github.spotbugs", version.ref = "spotbugs-plugin" }
+versioning = { id = "pl.allegro.tech.build.axion-release", version.ref = "versioning-plugin" }
