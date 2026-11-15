@@ -37,7 +37,7 @@
         <properties>
             <property name="xpath">
                 <value>
-                    <![CDATA[//PrimarySuffix[@Image="getClassLoader" and (../PrimaryPrefix/Name[@Image="getClass"] or ../PrimaryPrefix[pmd-java:typeIs("java.lang.Class")])]]]>
+                    <![CDATA[//MethodCall[pmd-java:matchesSig("java.lang.Class#getClassLoader()")]]]>
                 </value>
             </property>
         </properties>
