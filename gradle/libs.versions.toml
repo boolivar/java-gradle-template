@@ -1,7 +1,7 @@
 [versions]
 checkstyle = "14.4.0"
 commons-collections = "4.4"
-commons-io = "2.15.1"
+commons-io = "2.22.0"
 lombok-plugin = "9.7.0"
 pmd = "7.29.0"
 spotbugs-plugin = "6.0.22"
