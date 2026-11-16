@@ -1,6 +1,6 @@
 [versions]
 checkstyle = "14.4.0"
-commons-collections = "4.4"
+commons-collections = "4.6.0"
 commons-io = "2.15.1"
 lombok-plugin = "9.7.0"
 pmd = "7.29.0"
