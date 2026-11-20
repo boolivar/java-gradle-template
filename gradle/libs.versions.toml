@@ -5,7 +5,7 @@ commons-io = "2.15.1"
 lombok-plugin = "9.7.0"
 pmd = "7.29.0"
 spotbugs-plugin = "6.0.22"
-spring-boot = "3.2.3"
+spring-boot = "4.1.2"
 versioning-plugin = "1.21.4"
 
 [libraries]
